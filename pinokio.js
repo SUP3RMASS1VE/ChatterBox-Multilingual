@@ -1,6 +1,6 @@
 module.exports = {
   version: "3.7",
-  title: "Chatterbox-Multi",
+  title: "Chatterbox-Multilingual",
   description: "Fast and High-Quality Zero-Shot voice clone Text-to-Speech with Flow Matching",
   icon: "icon.png",
   menu: async (kernel, info) => {
