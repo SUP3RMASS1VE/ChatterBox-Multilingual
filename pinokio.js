@@ -1,28 +1,26 @@
-const path = require('path')
 module.exports = {
   version: "3.7",
-  title: "chatterbox",
-  description: "SoTA open-source TTS",
+  title: "Chatterbox-Multi",
+  description: "Fast and High-Quality Zero-Shot voice clone Text-to-Speech with Flow Matching",
   icon: "icon.png",
   menu: async (kernel, info) => {
-    let installed = info.exists("app/env")
+    let installed = info.exists("app/venv")
     let running = {
-      install: info.running("install.js"),
-      start: info.running("start.js"),
+      install: info.running("install.json"),
+      start: info.running("start.json"),
       update: info.running("update.js"),
       reset: info.running("reset.js"),
-      link: info.running("link.js")
     }
     if (running.install) {
       return [{
         default: true,
         icon: "fa-solid fa-plug",
         text: "Installing",
-        href: "install.js",
+        href: "install.json",
       }]
     } else if (installed) {
       if (running.start) {
-        let local = info.local("start.js")
+        let local = info.local("start.json")
         if (local && local.url) {
           return [{
             default: true,
@@ -32,14 +30,14 @@ module.exports = {
           }, {
             icon: 'fa-solid fa-terminal',
             text: "Terminal",
-            href: "start.js",
+            href: "start.json",
           }]
         } else {
           return [{
             default: true,
             icon: 'fa-solid fa-terminal',
             text: "Terminal",
-            href: "start.js",
+            href: "start.json",
           }]
         }
       } else if (running.update) {
@@ -56,19 +54,12 @@ module.exports = {
           text: "Resetting",
           href: "reset.js",
         }]
-      } else if (running.link) {
-        return [{
-          default: true,
-          icon: 'fa-solid fa-terminal',
-          text: "Deduplicating",
-          href: "link.js",
-        }]
       } else {
         return [{
           default: true,
           icon: "fa-solid fa-power-off",
           text: "Start",
-          href: "start.js",
+          href: "start.json",
         }, {
           icon: "fa-solid fa-plug",
           text: "Update",
@@ -76,11 +67,7 @@ module.exports = {
         }, {
           icon: "fa-solid fa-plug",
           text: "Install",
-          href: "install.js",
-        }, {
-          icon: "fa-solid fa-file-zipper",
-          text: "<div><strong>Save Disk Space</strong><div>Deduplicates redundant library files</div></div>",
-          href: "link.js",
+          href: "install.json",
         }, {
           icon: "fa-regular fa-circle-xmark",
           text: "<div><strong>Reset</strong><div>Revert to pre-install state</div></div>",
@@ -94,7 +81,7 @@ module.exports = {
         default: true,
         icon: "fa-solid fa-plug",
         text: "Install",
-        href: "install.js",
+        href: "install.json",
       }]
     }
   }
