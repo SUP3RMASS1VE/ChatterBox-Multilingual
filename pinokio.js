@@ -1,7 +1,7 @@
 module.exports = {
   version: "3.7",
   title: "Chatterbox-Multilingual",
-  description: "Fast and High-Quality Zero-Shot voice clone Text-to-Speech with Flow Matching",
+  description: "Fast and High-Quality Zero-Shot voice clone Text-to-Speech with Flow Matching Multilingual",
   icon: "icon.png",
   menu: async (kernel, info) => {
     let installed = info.exists("app/venv")
