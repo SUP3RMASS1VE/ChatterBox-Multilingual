@@ -9,19 +9,6 @@
       }
     },
     {
-      "method": "script.start",
-      "params": {
-        "uri": "torch.js",
-        "params": {
-          "path": "app",
-          "venv": "venv",
-          "xformers": false,
-          "triton": false,
-          "sageattention": false
-        }
-      }
-    },
-    {
       "method": "shell.run",
       "params": {
         "venv": "venv",
@@ -33,6 +20,19 @@
           "uv pip install --upgrade pip",
           "uv pip install chatterbox-tts --no-deps --force-reinstall"
         ]
+      }
+    },
+    {
+      "method": "script.start",
+      "params": {
+        "uri": "torch.js",
+        "params": {
+          "path": "app",
+          "venv": "venv",
+          "xformers": false,
+          "triton": false,
+          "sageattention": false
+        }
       }
     }
   ]
